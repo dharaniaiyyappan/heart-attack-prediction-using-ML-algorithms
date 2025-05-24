@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Attack Prediction</title>
+    <style>
+        body {
+            background-image: url('https://www.pngkit.com/png/full/267-2678427_heart-background.png'); /* Example background */
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        form {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        button {
+            background-color: red;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Heart Attack Prediction Form</h2>
+    <form action="/heart-attack-prediction" method="post">
+        <label>Age:</label>
+        <input type="number" name="age" required><br>
+        
+        <label>Sex:</label>
+        <select name="sex" required>
+            <option value="1">Male</option>
+            <option value="0">Female</option>
+        </select><br>
+        
+        <label>Chest Pain Type:</label>
+        <select name="chest-pain-type" required>
+            <option value="0">Typical Angina</option>
+            <option value="1">Atypical Angina</option>
+            <option value="2">Non-Anginal Pain</option>
+            <option value="3">Asymptomatic</option>
+        </select><br>
+        
+        <label>Resting Blood Pressure:</label>
+        <input type="number" name="rbp" required><br>
+        
+        <label>Cholesterol Level:</label>
+        <input type="number" name="chol" required><br>
+        
+        <label>Fasting Blood Sugar > 120 mg/dl:</label>
+        <select name="fbs" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br>
+        
+        <label>Resting ECG Results:</label>
+        <select name="rest_ecg" required>
+            <option value="0">Normal</option>
+            <option value="1">ST-T Wave Abnormality</option>
+            <option value="2">Left Ventricular Hypertrophy</option>
+        </select><br>
+        
+        <label>Max Heart Rate:</label>
+        <input type="number" name="max-heart-rate" required><br>
+        
+        <label>Exercise Induced Angina:</label>
+        <select name="exang" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br>
+        
+        <label>ST Depression (Oldpeak):</label>
+        <input type="number" name="oldpeak" step="0.1" required><br>
+        
+        <label>Slope of Peak Exercise ST Segment:</label>
+        <select name="slp" required>
+            <option value="0">Upsloping</option>
+            <option value="1">Flat</option>
+            <option value="2">Downsloping</option>
+        </select><br>
+        
+        <label>Number of Major Vessels Colored by Fluoroscopy:</label>
+        <input type="number" name="ca" min="0" max="4" required><br>
+        
+        <label>Thalassemia Type:</label>
+        <select name="thal" required>
+            <option value="1">Normal</option>
+            <option value="2">Fixed Defect</option>
+            <option value="3">Reversible Defect</option>
+        </select><br>
+        
+        <button type="submit">Predict</button>
+    </form>
+    
+    {% if statement %}
+        <h3>{{ statement }}</h3>
+    {% endif %}
+</body>
+</html>

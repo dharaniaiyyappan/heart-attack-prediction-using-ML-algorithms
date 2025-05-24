@@ -1,0 +1,64 @@
+#LogisticRegression
+from sklearn.linear_model import LogisticRegression
+
+# Initialize model
+log_reg = LogisticRegression()
+
+# Train model
+log_reg.fit(X_train, y_train)
+
+# Predict
+y_pred_log_reg = log_reg.predict(X_test)
+
+# Accuracy
+from sklearn.metrics import accuracy_score
+accuracy_log_reg = accuracy_score(y_test, y_pred_log_reg)
+print("Logistic Regression Accuracy:", accuracy_log_reg)
+
+#RandomForestClassifier
+from sklearn.ensemble import RandomForestClassifier
+
+# Initialize model
+rf = RandomForestClassifier()
+
+# Train model
+rf.fit(X_train, y_train)
+
+# Predict
+y_pred_rf = rf.predict(X_test)
+
+# Accuracy
+accuracy_rf = accuracy_score(y_test, y_pred_rf)
+print("Random Forest Accuracy:", accuracy_rf)
+
+#GradientBoostingClassifier
+from sklearn.ensemble import GradientBoostingClassifier
+
+# Initialize model
+gb = GradientBoostingClassifier()
+
+# Train model
+gb.fit(X_train, y_train)
+
+# Predict
+y_pred_gb = gb.predict(X_test)
+
+# Accuracy
+accuracy_gb = accuracy_score(y_test, y_pred_gb)
+print("Gradient Boosting Accuracy:", accuracy_gb)
+
+#Neural Network (MLP Classifier)
+from sklearn.neural_network import MLPClassifier
+
+# Initialize model
+mlp = MLPClassifier(max_iter=500)
+
+# Train model
+mlp.fit(X_train, y_train)
+
+# Predict
+y_pred_mlp = mlp.predict(X_test)
+
+# Accuracy
+accuracy_mlp = accuracy_score(y_test, y_pred_mlp)
+print("Neural Network Accuracy:", accuracy_mlp)
